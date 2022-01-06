@@ -6,7 +6,7 @@ do
 	python run.py \
 	--agt 12 \
 	--usr 2 \
-	--max_turn 30 \
+	--max_turn 40 \
 	--kb_path ./deep_dialog/data_restaurant/restaurant.kb.1k.v1.p \
 	--goal_file_path ./deep_dialog/data_restaurant/user_goals_first.v1.p \
 	--slot_set ./deep_dialog/data_restaurant/restaurant_slots.txt \
