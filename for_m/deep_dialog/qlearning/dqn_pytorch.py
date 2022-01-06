@@ -180,7 +180,7 @@ class DQN(nn.Module):
 
                 # new_q_prime = factor * q_prime_min + (1 - factor) * q_prime_max
                 q_target = r + self.gamma * new_q_prime * (1 - term)
-                print('type of factor:', type(factor))
+                # print('type of factor:', type(factor))
 
             # q_prime = self.target_model(s_prime).detach()
             # q_prime_max= q_prime.max(1)[0].unsqueeze(1)
