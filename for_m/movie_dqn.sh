@@ -12,8 +12,8 @@ do
   --write_model_dir $save_path \
   --dqn_hidden_size 80 \
   --experience_replay_pool_size 10000 \
-  --episodes 120 \
-  --simulation_epoch_size 5 \
+  --episodes 500 \
+  --simulation_epoch_size 100 \
   --run_mode 3 \
   --act_level 0 \
   --slot_err_prob 0.00 \

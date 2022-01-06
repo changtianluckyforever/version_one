@@ -104,7 +104,7 @@ if __name__ == "__main__":
     parser.add_argument('--grounded', dest='grounded', type=int, default=False, help='planning with ground truth')
     parser.add_argument('--boosted', dest='boosted', type=int, default=True, help='boost planner')
     parser.add_argument('--train_world_model', dest='train_world_model', type=int, default=0, help='train_world_model or not')
-    parser.add_argument('--save_model', dest='save_model', type=int, default=1, help='whether to save models')
+    parser.add_argument('--save_model', dest='save_model', type=int, default=0, help='whether to save models')
     parser.add_argument('--user_success_rate_threshold', dest='user_success_rate_threshold', type=float, default=1, help='success rate threshold for user model')
     parser.add_argument('--agent_success_rate_threshold', dest='agent_success_rate_threshold', type=float, default=1, help='success rate threshold for agent model')
     parser.add_argument('--pretrain_discriminator', dest='pretrain_discriminator', type=int, default=0, help='whether to pretrain the discriminator')
@@ -419,11 +419,11 @@ def simulation_epoch(simulation_epoch_size, evaluation = False, train =False):
         while(not episode_over):
             # episode_over, reward = dialog_manager.next_turn(record_training_data=False, record_training_data_for_user=False)
             if mark_time and evaluation:
-                episode_over, reward, q_max = dialog_manager.next_turn(eval=evaluation)
+                episode_over, reward, q_max = dialog_manager.next_turn(eval=evaluation, record_training_data=False, record_training_data_for_user=False)
                 sub_list.append(q_max)
                 mark_time = 0
             else:
-                episode_over, reward, ttt = dialog_manager.next_turn(eval=evaluation)
+                episode_over, reward, ttt = dialog_manager.next_turn(eval=evaluation, record_training_data=False, record_training_data_for_user=False)
 
             cumulative_reward += reward
             if episode_over:
