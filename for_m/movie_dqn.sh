@@ -1,4 +1,4 @@
-for ((i=0;i<1;i=i+1))
+for ((i=0;i<4;i=i+1))
 do
   save_path="./movie/final/dqn/$i"
   mkdir -p $save_path
