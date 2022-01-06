@@ -1,4 +1,4 @@
-for ((i=0;i<1;i=i+1))
+for ((i=0;i<5;i=i+1))
 do
   save_path="./movie/final/dpav_net/$i"
   mkdir -p $save_path
@@ -12,8 +12,8 @@ do
   --write_model_dir $save_path \
   --dqn_hidden_size 80 \
   --experience_replay_pool_size 10000 \
-  --episodes 10 \
-  --simulation_epoch_size 5 \
+  --episodes 500 \
+  --simulation_epoch_size 100 \
   --run_mode 3 \
   --act_level 0 \
   --slot_err_prob 0.00 \
@@ -26,7 +26,8 @@ do
   --train_world_model 0 \
   --num_target_net 4\
   --pav 1\
-  --net_parameter 1\
+  --discount_factor 0.4\
+  --net_parameter 0\
   --model_type DQN
 
 done
