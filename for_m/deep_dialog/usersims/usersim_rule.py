@@ -60,6 +60,8 @@ class RuleSimulator(UserSimulator):
         if evaluation == True:
             evaluation_set = self.start_set['all'][0:100]  # it was
             self.goal = evaluation_set[epis]
+            ###in order to solve high rate problem, we comment above two lines
+            self.goal = self._sample_goal(self.start_set)
         else:
             self.goal = self._sample_goal(self.start_set)
 

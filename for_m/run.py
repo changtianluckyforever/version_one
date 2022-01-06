@@ -121,12 +121,12 @@ if __name__ == "__main__":
     
 
 
-    parser.add_argument('--duel', dest = 'duel', type = bool, default = False)
-    parser.add_argument('--double', dest = 'double', type = bool, default = False)
+    parser.add_argument('--duel', dest = 'duel', type = int, default = 0)
+    parser.add_argument('--double', dest = 'double', type = int, default = 0)
     parser.add_argument('--pav', dest = 'pav' , type= int, default = 0)
     parser.add_argument('--discount_factor', dest = 'discount_factor', type = float, default = 0.10)
     parser.add_argument('--num_target_net', dest='num_target_net', default=4, type=int, help='Total number of target networks.')
-    parser.add_argument('--averaged_dqn', dest = 'averaged_dqn', type = bool, default = False)
+    parser.add_argument('--averaged_dqn', dest = 'averaged_dqn', type = int, default = 0)
     parser.add_argument('--net_parameter', type=int, default=0)
     parser.add_argument('--maxmin', type=int, default=0)
     parser.add_argument('--sunrise', type=int, default=0)
