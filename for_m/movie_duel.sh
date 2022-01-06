@@ -1,6 +1,6 @@
 for ((i=0;i<4;i=i+1))
 do
-  save_path="./movie/final/dpav_net/$i"
+  save_path="./movie/final/duel_dqn/$i"
   mkdir -p $save_path
 
   python2 run.py \
@@ -24,10 +24,8 @@ do
   --planning_steps 0 \
   --boosted 0 \
   --train_world_model 0 \
+  --duel 1\
   --num_target_net 4\
-  --pav 1\
-  --discount_factor 0.4\
-  --net_parameter 1\
   --model_type DQN
 
 done
