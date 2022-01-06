@@ -21,7 +21,7 @@ do
   --batch_size 16 \
   --warm_start 1 \
   --warm_start_epochs 120 \
-  --planning_steps 4 \
+  --planning_steps 0 \
   --boosted 0 \
   --train_world_model 0 \
   --num_target_net 4\
