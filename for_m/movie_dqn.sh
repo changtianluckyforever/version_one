@@ -13,7 +13,7 @@ do
   --dqn_hidden_size 80 \
   --experience_replay_pool_size 10000 \
   --episodes 500 \
-  --simulation_epoch_size 100 \
+  --simulation_epoch_size 60 \
   --run_mode 3 \
   --act_level 0 \
   --slot_err_prob 0.00 \
