@@ -1,6 +1,6 @@
 for ((i=0;i<4;i=i+1))
 do
-	save_path="./rest/final/dqn/$i"
+	save_path="./rest/final/double_dqn/$i"
 	mkdir -p $save_path
 
 	python run.py \
@@ -35,7 +35,7 @@ do
 	--noisy 0\
 	--dpav 0\
 	--dueling_dqn 0 \
-	--double_dqn 0 \
+	--double_dqn 1 \
 	--bayesian 0\
 	--averaged 0\
 	--maxmin 0\

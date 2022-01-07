@@ -1,6 +1,6 @@
-for ((i=0;i<4;i=i+1))
+for ((i=0;i<5;i=i+1))
 do
-	save_path="./rest/final/dqn/$i"
+	save_path="./rest/final/dpav075_dqn/$i"
 	mkdir -p $save_path
 
 	python run.py \
@@ -33,14 +33,14 @@ do
 	--icm 0 \
 	--per 0 \
 	--noisy 0\
-	--dpav 0\
-	--dueling_dqn 0 \
-	--double_dqn 0 \
+	--dpav 1\
+	--dueling_dqn 0\
+	--double_dqn 0\
 	--bayesian 0\
 	--averaged 0\
 	--maxmin 0\
 	--sunrise 0\
-	--discount_factor 0.7\
+	--discount_factor 0.75\
 	--num_target_net 4\
 	--distributional 0
 done

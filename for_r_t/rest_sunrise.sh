@@ -1,12 +1,12 @@
-for ((i=0;i<1;i=i+1))
+for ((i=0;i<4;i=i+1))
 do
-	save_path="./rest/final/sunrise/$i"
+	save_path="./rest/final/sunrise_dqn/$i"
 	mkdir -p $save_path
 
 	python run.py \
 	--agt 12 \
 	--usr 2 \
-	--max_turn 30 \
+	--max_turn 40 \
 	--kb_path ./deep_dialog/data_restaurant/restaurant.kb.1k.v1.p \
 	--goal_file_path ./deep_dialog/data_restaurant/user_goals_first.v1.p \
 	--slot_set ./deep_dialog/data_restaurant/restaurant_slots.txt \
@@ -17,8 +17,8 @@ do
 	--diaact_nl_pairs ./deep_dialog/data_restaurant/sim_dia_act_nl_pairs.v2.json \
 	--dqn_hidden_size 80 \
 	--experience_replay_pool_size 10000 \
-	--episodes 200 \
-	--simulation_epoch_size 100 \
+	--episodes 300 \
+	--simulation_epoch_size 500 \
 	--write_model_dir $save_path \
 	--run_mode 3 \
 	--act_level 0\
@@ -29,15 +29,18 @@ do
 	--warm_start_epochs 120 \
 	--epsilon 0.00 \
 	--gamma 0.95 \
-	--dueling_dqn 0 \
 	--evaluation True\
-	--double_dqn 0 \
 	--icm 0 \
 	--per 0 \
 	--noisy 0\
 	--dpav 0\
+	--dueling_dqn 0 \
+	--double_dqn 0\
 	--bayesian 0\
+	--averaged 0\
+	--maxmin 0\
 	--sunrise 1\
 	--discount_factor 0.7\
+	--num_target_net 4\
 	--distributional 0
 done
