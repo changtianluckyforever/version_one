@@ -192,7 +192,7 @@ class DQN(nn.Module):
             q_target = r + gamma * q_target_prime * (1 - done)
 
         elif self.averaged:
-            print('we are using averaged dqn')
+            # print('we are using averaged dqn')
             q_sum = self.target_model1(s_prime).clone().detach()
             q2 = self.target_model2(s_prime).detach()
             q3 = self.target_model3(s_prime).detach()
@@ -202,7 +202,7 @@ class DQN(nn.Module):
             q_target = r + gamma * q_prime * (1 - done)
 
         elif self.maxmin_dqn:
-            print('we are using maxmin dqn')
+            # print('we are using maxmin dqn')
             targetmodellist = [self.target_model1, self.target_model2, self.target_model3, self.target_model4]
             q_min = self.target_model1(s_prime).clone().detach()
             for i in range(1, self.num_target_net):
