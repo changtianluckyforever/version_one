@@ -1,6 +1,6 @@
 for ((i=0;i<4;i=i+1))
 do
-	save_path="./rest/final/dpav06_dqn/$i"
+	save_path="./rest/final/dpavnet_dqn/$i"
 	mkdir -p $save_path
 
 	python run.py \
